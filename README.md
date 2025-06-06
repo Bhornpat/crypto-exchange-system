@@ -5,3 +5,4 @@
 
 #### Crypto Exchange System – ER Diagram
 ![ERD](./picture/crypto.drawio.png)
+you can click on the full pic to see clearer information or click this link: [Link](./picture/crypto-exchange-database-system.drawio)
