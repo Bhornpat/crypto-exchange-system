@@ -4,13 +4,9 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class ExchangeRate extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+      static associate(models) {
+        ExchangeRate.belongsTo(models.Currency, { foreignKey: 'from_currency_id', as: 'FromCurrency' });
+        ExchangeRate.belongsTo(models.Currency, { foreignKey: 'to_currency_id', as: 'ToCurrency' });
     }
   }
   ExchangeRate.init({
@@ -21,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'ExchangeRate',
+    tableName: 'exchange_rates'
   });
   return ExchangeRate;
 };
