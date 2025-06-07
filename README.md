@@ -86,7 +86,7 @@ exchange_rates
 ```
 npm run dev
 ```
-------
+
 
 ## Reset Migrations (Full Clean Rebuild)
 ```
@@ -162,9 +162,9 @@ Example: /api/wallets/1
 
 
 ## Additional indications
-====
+
+
 ### Database Lifecycle Control
-====
 
 #### 1. Create a table in the database from migrations/
 ```
@@ -172,7 +172,7 @@ npx sequelize-cli db:migrate
 ```
 *Created tables such as: users, wallets, transactions, transfers, etc.*
 
--------------
+
 
 #### 2. Run all seed files in seeders/
 ```
@@ -180,7 +180,7 @@ npx sequelize-cli db:seed:all
 ```
 *Used to inject data into SQLite database, without having to create data every time*
 
---------------
+
 
 #### 3. Undo the last seeder file only (undo back one file at a time)
 ```
@@ -188,7 +188,7 @@ npx sequelize-cli db:seed:undo
 ```
 *If you have multiple seed files, undo or want to delete the latest test data*
 
---------------
+
 
 #### 4. Undo All Seeder Files (Full Clean)
 ```
@@ -196,7 +196,7 @@ npx sequelize-cli db:seed:undo:all
 ```
 *Rolls back every seeder file, very useful before re-running seeds after modifying test data*
 
--------------
+
 
 #### 5. Delete all tables in the database, revert all migrations
 ```
@@ -204,7 +204,7 @@ npx sequelize-cli db:migrate:undo:all
 ```
 *Use this if you want to reset the database to start over*. *⚠️ Be careful! It will destroy the structure of all tables *
 
---------------
+
 
 #### 6. Delete SQLite database file (like a new format)
 ```
@@ -212,7 +212,7 @@ rm dev.sqlite
 ```
 *Use when you encounter problems like SQLITE_BUSY, no such table or old data is not clean*
 
--------------
+
 
 #### 7. Run a single specific seeder file
 ```
@@ -220,7 +220,7 @@ npx sequelize-cli db:seed --seed <fileName>
 ```
 *Instead of running all files in the seeders/*
 
--------------
+
 
 #### 8. Create New Migration File
 ```
@@ -228,7 +228,7 @@ npx sequelize-cli migration:generate --name create-transfers
 ```
 *Instead of running all files in the seeders/*
 
-==============
+
 
 ### Create a New Model + Migration automatically
 ```
@@ -236,13 +236,14 @@ npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<t
 ```
 *One-liner to scaffold the model and the corresponding migration*
 
--------------
+
 
 ### Create a New Seeder File
 ```
 npx sequelize-cli seed:generate --name <seed_name>
 ```
 *The name within the file the seeder will use to automatically create files with timestamps*
+
 
 ------------
 
