@@ -71,13 +71,7 @@ The `dev.sqlite` file will be created automatically
 npm run seed                 
 ```
 > Tables created and filled:
-users 
-user_sessions
-currencies 
-wallets   
-transfers
-transactions 
-exchange_rates
+users, user_sessions, currencies , wallets, transfers, transactions, exchange_rates
 
 
 #### 3. Run the Server 
