@@ -107,7 +107,7 @@ npm run rerun
 ## API Documentation
 
 
-### User register
+### 1. User register
 
 **POST**  /api/users/register
 ```
@@ -120,7 +120,7 @@ npm run rerun
 >User info returned
 
 
-### Get wallet by user ID
+### 2. Get wallet by user ID
 
 **GET**  /api/wallets/:user_id
 ```
@@ -129,7 +129,7 @@ Example: /api/wallets/1
 >Returns a list of all wallet balances per currency for the user
 
 
-### Transfer crypto and fiat
+### 3. Transfer crypto and fiat
 
 **POST**  /api/transfer
 
@@ -145,7 +145,7 @@ Example: /api/wallets/1
 >Wallet balances are updated automatically with transactions
 
 
-### Exchange currency
+### 4. Exchange currency
 
 **POST**  /api/exchange
  
