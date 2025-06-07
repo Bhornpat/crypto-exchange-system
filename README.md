@@ -223,15 +223,7 @@ npx sequelize-cli db:seed --seed <fileName>
 
 
 
-#### 8. Create New Migration File
-```
-npx sequelize-cli migration:generate --name create-transfers
-```
->Instead of running all files in the seeders/
-
-
-
-### Create a New Model + Migration automatically
+#### 8. Create a New Model + Migration automatically
 ```
 npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<type1>,<attribute2>:<type2>,...
 ```
@@ -239,11 +231,12 @@ npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<t
 
 
 
-### Create a New Seeder File
+#### 9. Create a New Seeder File
 ```
 npx sequelize-cli seed:generate --name <seed_name>
 ```
 >The name within the file the seeder will use to automatically create files with timestamps
+
 
 
 ------------
