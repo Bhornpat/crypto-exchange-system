@@ -1,17 +1,19 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class UserSession extends Model {
-      static associate(models) {
-        UserSession.belongsTo(models.User, { foreignKey: 'user_id' });
-
+    static associate(models) {
+      UserSession.belongsTo(models.User, { foreignKey: 'user_id' });
     }
   }
+
   UserSession.init({
     user_id: DataTypes.INTEGER,
-    token_hash: DataTypes.STRING,
+    token_hash: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     login_time: DataTypes.DATE,
     logout_time: DataTypes.DATE,
     ip_address: DataTypes.STRING,
@@ -21,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'UserSession',
     tableName: 'user_sessions'
-     });
+  });
+
   return UserSession;
 };
+

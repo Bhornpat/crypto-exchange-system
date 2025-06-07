@@ -14,12 +14,23 @@ module.exports = (sequelize, DataTypes) => {
   Currency.hasMany(models.ExchangeRate, { foreignKey: 'to_currency_id', as: 'ToRates' });
     }
   }
+
   Currency.init({
-    code: DataTypes.STRING,
-    name: DataTypes.STRING,
+    code: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true     //  ห้ามซ้ำ
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     type: DataTypes.STRING,
     symbol: DataTypes.STRING,
-    is_active: DataTypes.BOOLEAN
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
   }, {
     sequelize,
     modelName: 'Currency',
@@ -28,3 +39,4 @@ module.exports = (sequelize, DataTypes) => {
 
   return Currency;
 };
+

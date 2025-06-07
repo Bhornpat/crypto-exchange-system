@@ -4,9 +4,23 @@ const bcrypt = require('bcrypt');
 exports.register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
+    //  ตรวจสอบ email ซ้ำ
+    const existingEmail = await User.findOne({ where: { email } });
+    if (existingEmail) {
+      return res.status(400).json({ error: 'Email already in use' });
+    }
+
+    //  ตรวจสอบ username ซ้ำ
+    const existingUsername = await User.findOne({ where: { username } });
+    if (existingUsername) {
+      return res.status(400).json({ error: 'Username already taken' });
+    }
+
     const password_hash = await bcrypt.hash(password, 10);
-    const user = await User.create({ username, email, password_hash });  // important
-    res.status(201).json(user);    //new user create
+
+    const user = await User.create({ username, email, password_hash });
+
+    res.status(201).json(user);
   } catch (error) {
     console.error('[Register Error]', error);
     res.status(500).json({ error: error.message });

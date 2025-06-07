@@ -11,14 +11,21 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Transfer, { foreignKey: 'to_user_id', as: 'ReceivedTransfers' });
     }
   }
-  User.init({
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password_hash: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'User',
-    tableName: "users"
-   });
+ User.init({
+  username: {
+    type: DataTypes.STRING,
+    unique: true   // ใส่เพื่อกัน username ซ้ำ
+  },
+  email: {
+    type: DataTypes.STRING,
+    unique: true   // ใส่เพื่อกัน email ซ้ำ
+  },
+  password_hash: DataTypes.STRING
+}, {
+  sequelize,
+  modelName: 'User',
+  tableName: 'users'
+});
+
   return User;
 };
