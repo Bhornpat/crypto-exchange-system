@@ -59,7 +59,7 @@ In config/config.json:
 }
 ```
 
-## Setup Database
+## 🔨 Setup Database
 
 #### 1. Run Migrations
 ```
@@ -104,7 +104,7 @@ npm run rerun
 
 
 ----
-## API Documentation
+## 📡 API Documentation
 
 
 ### 1. User register
@@ -162,7 +162,7 @@ Example: /api/wallets/1
 
 
 
-## Additional indications
+## 📌 Additional indications
 
 
 ### Database Lifecycle Control
@@ -241,7 +241,7 @@ npx sequelize-cli seed:generate --name <seed_name>
 
 ------------
 
-🔍 Seed Data Overview (from your DB)
+### 🔍 Seed Data Overview (from your DB)
 
 ------------
 
