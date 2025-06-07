@@ -203,7 +203,7 @@ npx sequelize-cli db:seed:undo:all
 ```
 npx sequelize-cli db:migrate:undo:all
 ```
->Use this if you want to reset the database to start over*. *⚠️ Be careful! It will destroy the structure of all tables 
+>Use this if you want to reset the database to start over *⚠️ Be careful! It will destroy the structure of all tables 
 
 
 
