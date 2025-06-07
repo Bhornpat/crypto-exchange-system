@@ -6,7 +6,7 @@ exports.register = async (req, res) => {
     const { username, email, password } = req.body;
     const password_hash = await bcrypt.hash(password, 10);
     const user = await User.create({ username, email, password_hash });  // important
-    res.status(201).json(user);
+    res.status(201).json(user);    //new user create
   } catch (error) {
     console.error('[Register Error]', error);
     res.status(500).json({ error: error.message });
