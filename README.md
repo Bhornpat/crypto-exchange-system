@@ -11,7 +11,7 @@ you can click on the full pic to see more clearer information or click this link
 Backend prototype of a C2C crypto exchange platform
 
 ### Feature
-- User register   **The login system has not been created yet**
+- User register (*The login system has not been created yet*)
 - Wallets per currency per user
 - Send crypto to another user in the system
 - Exchange between fiat/crypto currencies
@@ -38,7 +38,7 @@ config/       :  DB settings (config.json)
 ---
 
 
-# 🚀 Getting Started with The Project
+## 🚀 Getting Started with The Project
 
 1. Clone the Project
 ```
@@ -60,7 +60,7 @@ In config/config.json:
 }
 ```
 
-# Setup Database
+## Setup Database
 
 1. Run Migrations
 
@@ -85,7 +85,9 @@ transactions
 exchange_rates
 
 
-# ▶️ Run the Server
+## ▶️ Run the Server
+
+
 ```
 npm run dev
 ```
@@ -99,7 +101,7 @@ npm run dev
 ---
 
 # Additions
-
+----
 ## API Documentation
 ----
 ### User register
@@ -163,11 +165,13 @@ npx sequelize-cli db:migrate
 >Created tables such as: users, wallets, transactions, transfers, etc.
 
 
+
 2. Delete all tables in the database, revert all migrations
 ```
 npx sequelize-cli db:migrate:undo:all
 ```
 >Use this if you want to reset the database to start over. ⚠️ Be careful! It will destroy the structure of all tables 
+
 
 
 3. Run all seed files in seeders/
@@ -177,11 +181,13 @@ npx sequelize-cli db:seed:all
 >Used to inject data into SQLite database, without having to create data every time
 
 
+
 4. Undo the last seeder file only (undo back one file at a time)
 ```
 npx sequelize-cli db:seed:undo
 ```
 >If you have multiple seed files, undo or want to delete the latest test data
+
 
 
 5. Delete SQLite database file (like a new format)
