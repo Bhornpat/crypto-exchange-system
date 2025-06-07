@@ -156,6 +156,8 @@ Example: /api/wallets/1
 
 #### 🔍 Seed Data Overview (from your DB)
 
+>`dev.sqlite` file
+
 ------------
 
 
