@@ -152,6 +152,12 @@ Example: /api/wallets/1
 >Performs exchange using the latest exchange rate
 
 
+------------
+
+#### 🔍 Seed Data Overview (from your DB)
+
+------------
+
 
 
 ## 📌 Additional indications
@@ -228,13 +234,5 @@ npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<t
 npx sequelize-cli seed:generate --name <seed_name>
 ```
 >The name within the file the seeder will use to automatically create files with timestamps
-
-
-
-------------
-
-### 🔍 Seed Data Overview (from your DB)
-
-------------
 
 
