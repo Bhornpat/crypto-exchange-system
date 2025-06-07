@@ -26,6 +26,7 @@ RESTful API design,
 bcrypt for password hashing
 
 ### crypto-exchange-system Structure
+```
 app.js        :  The starting point of Express Server
 models/       :  Sequelize models (ORM structure of database tables)
 migrations/   :  Sequelize migration files to create/adjust DB schema (via sequelize-cli)
@@ -33,7 +34,7 @@ controllers/  :  Manage the logic of each API endpoint
 routes/       :  Used to connect API paths to the associated controllers
 seeders/      :  Sequelize seed files to populate mock data
 config/       :  DB settings (config.json)
-
+```
 ---
 
 
