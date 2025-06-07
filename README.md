@@ -7,8 +7,6 @@ you can click on the full pic to see more clearer information or click this link
 
 ---
 
-#### Backend prototype of a C2C crypto exchange platform
-
 ### Feature
 - User register (The login system has not been created yet)
 - Wallets per currency per user
