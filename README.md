@@ -39,21 +39,21 @@ config/       :  DB settings (config.json)
 
 ## 🚀 Getting Started with The Project
 
-### 1. Clone the Project
+#### 1. Clone the Project
 ```
 git clone https://github.com/Bhornpat/crypto-exchange-system.git
 cd crypto-exchange-system
 ```
 
-### 2. Install Dependencies
+#### 2. Install Dependencies
 ```
 npm Install
 ```
 
-### 3. DB Config (SQLite by default) 
+#### 3. DB Config (SQLite by default) 
 In config/config.json:
 ```
-"development": {
+"development": 
   "dialect": "sqlite",
   "storage": "./dev.sqlite"
 }
@@ -61,14 +61,14 @@ In config/config.json:
 
 ## Setup Database
 
-### 1. Run Migrations
+#### 1. Run Migrations
 ```
 npm run migrate                 
 ```
 The `dev.sqlite` file will be created automatically
 
 
-### 2. Seed the Database
+#### 2. Seed the Database
 ```
 npm run seed                 
 ```
@@ -82,20 +82,20 @@ transactions
 exchange_rates
 
 
-## 3. Run the Server 
+#### 3. Run the Server 
 ```
 npm run dev
 ```
 
 
-## Reset Migrations (Full Clean Rebuild)
+#### Reset Migrations (Full Clean Rebuild)
 ```
 npm run reset
 ```
 >Removes all tables, deletes the SQLite DB file, and re-applies migrations and seeds
 
 
-## Full Reset + Rerun Server
+#### Full Reset + Rerun Server
 ```
 npm run rerun
 ```
@@ -105,7 +105,7 @@ npm run rerun
 
 ----
 ## API Documentation
-----
+
 
 ### User register
 
@@ -160,6 +160,10 @@ Example: /api/wallets/1
 >Performs exchange using the latest exchange rate
 
 
+------------
+🔍 Seed Data Overview (from your DB)
+------------
+
 
 ## Additional indications
 
@@ -170,7 +174,7 @@ Example: /api/wallets/1
 ```
 npx sequelize-cli db:migrate
 ```
-*Created tables such as: users, wallets, transactions, transfers, etc.*
+>Created tables such as: users, wallets, transactions, transfers, etc
 
 
 
@@ -178,7 +182,7 @@ npx sequelize-cli db:migrate
 ```
 npx sequelize-cli db:seed:all
 ```
-*Used to inject data into SQLite database, without having to create data every time*
+>Used to inject data into SQLite database, without having to create data every time
 
 
 
@@ -186,7 +190,7 @@ npx sequelize-cli db:seed:all
 ```
 npx sequelize-cli db:seed:undo
 ```
-*If you have multiple seed files, undo or want to delete the latest test data*
+>If you have multiple seed files, undo or want to delete the latest test data
 
 
 
@@ -194,7 +198,7 @@ npx sequelize-cli db:seed:undo
 ```
 npx sequelize-cli db:seed:undo:all
 ```
-*Rolls back every seeder file, very useful before re-running seeds after modifying test data*
+>Rolls back every seeder file, very useful before re-running seeds after modifying test data
 
 
 
@@ -202,7 +206,7 @@ npx sequelize-cli db:seed:undo:all
 ```
 npx sequelize-cli db:migrate:undo:all
 ```
-*Use this if you want to reset the database to start over*. *⚠️ Be careful! It will destroy the structure of all tables *
+>Use this if you want to reset the database to start over*. *⚠️ Be careful! It will destroy the structure of all tables 
 
 
 
@@ -210,7 +214,7 @@ npx sequelize-cli db:migrate:undo:all
 ```
 rm dev.sqlite
 ```
-*Use when you encounter problems like SQLITE_BUSY, no such table or old data is not clean*
+>Use when you encounter problems like SQLITE_BUSY, no such table or old data is not clean
 
 
 
@@ -218,7 +222,7 @@ rm dev.sqlite
 ```
 npx sequelize-cli db:seed --seed <fileName>
 ```
-*Instead of running all files in the seeders/*
+>Instead of running all files in the seeders/
 
 
 
@@ -226,7 +230,7 @@ npx sequelize-cli db:seed --seed <fileName>
 ```
 npx sequelize-cli migration:generate --name create-transfers
 ```
-*Instead of running all files in the seeders/*
+>Instead of running all files in the seeders/
 
 
 
@@ -234,7 +238,7 @@ npx sequelize-cli migration:generate --name create-transfers
 ```
 npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<type1>,<attribute2>:<type2>,...
 ```
-*One-liner to scaffold the model and the corresponding migration*
+>One-liner to scaffold the model and the corresponding migration
 
 
 
@@ -242,11 +246,5 @@ npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<t
 ```
 npx sequelize-cli seed:generate --name <seed_name>
 ```
-*The name within the file the seeder will use to automatically create files with timestamps*
+>The name within the file the seeder will use to automatically create files with timestamps
 
-
-------------
-
-🔍 Seed Data Overview (from your DB)
-
-------------
