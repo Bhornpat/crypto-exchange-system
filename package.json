@@ -7,8 +7,10 @@
   "start": "node app.js",
   "dev": "nodemon app.js",
   "migrate": "sequelize-cli db:migrate",
-  "seed": "sequelize-cli db:seed:all"
-},
+  "seed": "sequelize-cli db:seed:all",
+  "reset": "sequelize-cli db:migrate:undo:all && rm -f dev.sqlite && sequelize-cli db:migrate && sequelize-cli db:seed:all",
+  "rerun": "npm run reset && nodemon app.js"
+  },
 "repository": {
     "type": "git",
     "url": "git@github-Bhornpat:Bhornpat/crypto-exchange-system.git"

@@ -2,7 +2,7 @@ const { Transfer, Wallet, Currency } = require('../models');
 
 exports.transfer = async (req, res) => {
   try {
-    const { from_user_id, to_user_id, currency_id, amount } = req.body;
+    const { from_user_id, to_user_id, currency_id, amount, description } = req.body;
 
     // ตรวจสอบยอด
     const senderWallet = await Wallet.findOne({ where: { user_id: from_user_id, currency_id } });
@@ -25,7 +25,7 @@ exports.transfer = async (req, res) => {
     }
 
     // บันทึก Transfer
-    const transfer = await Transfer.create({ from_user_id, to_user_id, currency_id, amount, status: 'completed' });
+    const transfer = await Transfer.create({ from_user_id, to_user_id, currency_id, amount, description, status: 'completed' });
 
     res.status(201).json(transfer);
   } catch (error) {

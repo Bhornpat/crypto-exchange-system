@@ -10,7 +10,7 @@ module.exports = {
         to_user_id: 2,
         currency_id: 1, // BTC
         amount: 0.001,
-        status: 'success',
+        status: 'completed',
         description: 'ค่าชาเขียวให้ bomi',
         createdAt: now,
         updatedAt: now
@@ -18,9 +18,9 @@ module.exports = {
       {
         from_user_id: 2,
         to_user_id: 1,
-        currency_id: 3, // THB
-        amount: 500,
-        status: 'success',
+        currency_id: 2, // ETH
+        amount: 0.0006,
+        status: 'completed',
         description: 'โอนคืนเมื่อวาน',
         createdAt: now,
         updatedAt: now
@@ -30,8 +30,18 @@ module.exports = {
         to_user_id: 2,
         currency_id: 3, // THB
         amount: 1000,
-        status: 'success',
+        status: 'completed',
         description: 'ของขวัญปีใหม่',
+        createdAt: now,
+        updatedAt: now
+      },
+      {
+        from_user_id: 3,
+        to_user_id: 2,
+        currency_id: 4, // USD
+        amount: 100,
+        status: 'completed',
+        description: 'for you',
         createdAt: now,
         updatedAt: now
       }
