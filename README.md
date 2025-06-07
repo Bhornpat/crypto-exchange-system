@@ -88,14 +88,14 @@ npm run dev
 ```
 
 
-#### Reset Migrations (Full Clean Rebuild)
+#### *Reset Migrations (Full Clean Rebuild)
 ```
 npm run reset
 ```
 >Removes all tables, deletes the SQLite DB file, and re-applies migrations and seeds
 
 
-#### Full Reset + Rerun Server
+#### *Full Reset + Rerun Server
 ```
 npm run rerun
 ```
@@ -109,7 +109,7 @@ npm run rerun
 
 ### User register
 
-**POST** /api/users/register
+**POST**  /api/users/register
 ```
 {
   "username": "you",
@@ -122,7 +122,7 @@ npm run rerun
 
 ### Get wallet by user ID
 
-**GET** /api/wallets/:user_id
+**GET**  /api/wallets/:user_id
 ```
 Example: /api/wallets/1
 ```
@@ -131,7 +131,7 @@ Example: /api/wallets/1
 
 ### Transfer crypto and fiat
 
-**POST** /api/transfer
+**POST**  /api/transfer
 
 ```
 {
@@ -147,8 +147,8 @@ Example: /api/wallets/1
 
 ### Exchange currency
 
-**POST** /api/exchange
-
+**POST**  /api/exchange
+ 
 ```
 {
   "user_id": 1,
@@ -160,9 +160,6 @@ Example: /api/wallets/1
 >Performs exchange using the latest exchange rate
 
 
-------------
-🔍 Seed Data Overview (from your DB)
-------------
 
 
 ## Additional indications
@@ -247,4 +244,12 @@ npx sequelize-cli model:generate --name <ModelName> --attributes <attribute1>:<t
 npx sequelize-cli seed:generate --name <seed_name>
 ```
 >The name within the file the seeder will use to automatically create files with timestamps
+
+
+------------
+
+🔍 Seed Data Overview (from your DB)
+
+------------
+
 
