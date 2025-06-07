@@ -19,7 +19,7 @@ Backend prototype of a C2C crypto exchange platform
 - Seed data for demonstration
 
 ### Technologies
->Node.js + Express, 
+Node.js + Express, 
 Sequelize ORM, 
 SQLite (default), 
 RESTful API design, 
