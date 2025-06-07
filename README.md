@@ -8,10 +8,10 @@ you can click on the full pic to see more clearer information or click this link
 
 ---
 
-backend prototype of a C2C crypto exchange platform
+Backend prototype of a C2C crypto exchange platform
 
 ### Feature
-- User register   *The login system has not been created yet*
+- User register   **The login system has not been created yet**
 - Wallets per currency per user
 - Send crypto to another user in the system
 - Exchange between fiat/crypto currencies
@@ -19,20 +19,20 @@ backend prototype of a C2C crypto exchange platform
 - Seed data for demonstration
 
 ### Technologies
-Node.js + Express
-Sequelize ORM
-SQLite (default)
-RESTful API design
+Node.js + Express, 
+Sequelize ORM, 
+SQLite (default), 
+RESTful API design, 
 bcrypt for password hashing
 
 ### crypto-exchange-system Structure
-app.js            *The starting point of Express Server*
-models/           *Sequelize models (ORM structure of database tables)*
-migrations/       *Sequelize migration files to create/adjust schema, used with sequelize-cli to manage DB structure*
-controllers/      *Manage the logic of each API endpoint* 
-routes/           *Used to connect API paths to the associated controllers*
-seeders/          *Sequelize seed files to populate mock data*
-config/           *DB settings (config.json)*
+app.js            **The starting point of Express Server**,
+models/           **Sequelize models (ORM structure of database tables)**,
+migrations/       **Sequelize migration files to create/adjust schema, used with sequelize-cli to manage DB structure**,
+controllers/      **Manage the logic of each API endpoint**, 
+routes/           **Used to connect API paths to the associated controllers**,
+seeders/          **Sequelize seed files to populate mock data**,
+config/           **DB settings (config.json)**
 
 ---
 
@@ -97,7 +97,7 @@ npm run dev
 
 ---
 
-## Additions
+# Additions
 
 ## API Documentation
 ----
@@ -118,7 +118,7 @@ GET /api/wallets/:user_id
 ```
 Example: /api/wallets/1
 ```
-Returns list of balances per currency
+>Returns list of balances per currency
 
 
 ### Transfer crypto
@@ -134,7 +134,7 @@ POST /api/transfer
   "description": "โอนคืนเมื่อวาน"
 }
 ```
-Wallet balances are updated atomically with transaction
+>Wallet balances are updated atomically with transaction
 
 
 ### Exchange currency
@@ -149,7 +149,7 @@ POST /api/exchange
   "from_amount": 10000
 }
 ```
-Performs exchange using the latest exchange rate
+>Performs exchange using the latest exchange rate
 
 ---
 
@@ -159,33 +159,32 @@ Performs exchange using the latest exchange rate
 ```
 npx sequelize-cli db:migrate
 ```
-Created tables such as: users, wallets, transactions, transfers, etc.
+>Created tables such as: users, wallets, transactions, transfers, etc.
 
 
 2. Delete all tables in the database, revert all migrations
 ```
 npx sequelize-cli db:migrate:undo:all
-
 ```
-Use this if you want to reset the database to start over. ⚠️ Be careful! It will destroy the structure of all tables 
+>Use this if you want to reset the database to start over. ⚠️ Be careful! It will destroy the structure of all tables 
 
 
 3. Run all seed files in seeders/
 ```
 npx sequelize-cli db:seed:all
 ```
-Used to inject data into SQLite database, without having to create data every time
+>Used to inject data into SQLite database, without having to create data every time
 
 
 4. Undo the last seeder file only (undo back one file at a time)
 ```
 npx sequelize-cli db:seed:undo
 ```
-If you have multiple seed files, undo or want to delete the latest test data
+>If you have multiple seed files, undo or want to delete the latest test data
 
 
 5. Delete SQLite database file (like a new format)
 ```
 rm dev.sqlite
 ```
-Use when you encounter problems like SQLITE_BUSY, no such table or old data is not clean
+>Use when you encounter problems like SQLITE_BUSY, no such table or old data is not clean
